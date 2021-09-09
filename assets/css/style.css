@@ -57,7 +57,7 @@ body {
 .header-nav-pages {
   display: flex;
 }
-/* zxcgvbhjnm */
+
 .header-nav-pages-item-link {
   font-family: Jura;
   font-size: 20px;
@@ -106,6 +106,57 @@ body {
 
 /* Main */
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Jura;
+  font-size: 41px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+h1:after,
+h2:after,
+h3:after,
+h4:after,
+h5:after,
+h6:after {
+  content: "";
+  background-color: #b99162;
+  height: 1.7px;
+  display: block;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  opacity: 0;
+  transition: width 500ms, opacity 500ms linear;
+  width: 0;
+}
+
+h1:hover::after,
+h2:hover::after,
+h3:hover::after,
+h4:hover::after,
+h5:hover::after,
+h6:hover::after {
+  opacity: 1;
+  width: 690px;
+  transition: width 500ms linear;
+}
+
 /* Section 1 */
 
 .main-section1 {
@@ -130,42 +181,9 @@ body {
   position: absolute;
 }
 
-h1 {
+.main-section1-header {
   max-width: 687px;
   margin-bottom: 30px;
-  font-family: Jura;
-  font-size: 41px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 50px;
-  letter-spacing: 0em;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
-
-h1:after {
-  content: "";
-  background-color: #b99162;
-  height: 1.7px;
-  display: block;
-  position: absolute;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
-  opacity: 0;
-  transition: width 500ms, opacity 500ms linear;
-  width: 0;
-}
-
-h1:hover::after {
-  opacity: 1;
-  width: 690px;
-  transition: width 500ms linear;
 }
 
 .main-section1-img {
