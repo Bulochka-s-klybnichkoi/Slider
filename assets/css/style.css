@@ -362,3 +362,25 @@ h6:hover::after {
   position: relative;
   background-size: 1820px;
 }
+
+.main-section3-slider-img {
+  width: 100%;
+}
+
+.main-section3-slider-arrows-left {
+  transform: rotate(180deg);
+  left: 40px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+}
+
+.main-section3-slider-arrows-right {
+  right: 40px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+}
+
+.main-section3-slider-arrows-left,
+.main-section3-slider-arrows-right {
+  position: absolute;
+  width: 50px;
+  top: 500px;
+}
