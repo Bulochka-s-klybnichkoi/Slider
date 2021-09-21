@@ -354,11 +354,11 @@ h6:hover::after {
 .main-section3 {
   padding-top: 32px;
   padding-bottom: 42px;
-  background-image: url(../img/section3/background.jpg);
+  /* background-image: url(../img/section3/background.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-color: rgba(255, 251, 219, 0.6);
-  background-blend-mode: lighten;
+  background-blend-mode: lighten; */
   position: relative;
   background-size: 1820px;
 }
@@ -383,4 +383,25 @@ h6:hover::after {
   position: absolute;
   width: 50px;
   top: 500px;
+}
+
+/* Footer */
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.4);
+  background-image: url(../img/footer/background.png);
+  background-blend-mode: multiply;
+}
+
+.footer-container {
+  padding-top: 150px;
+}
+
+.footer-title-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-links-item-link {
+  color: white;
 }

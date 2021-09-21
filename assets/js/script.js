@@ -12,13 +12,29 @@ var arrowR = document.getElementsByClassName("main-section3-slider-arrows-right"
 
 var currentpic = document.querySelector(".main-section3-slider-img");
 var currentpicid = 0;
+var maxpicid = 2;
 
 
 
 arrowL.addEventListener("click", previous);
+arrowR.addEventListener("click", next);
+
+function next() {
+   if (currentpicid > maxpicid - 1) {
+      currentpicid = 0;
+   }
+   else {
+      currentpicid++;
+   }
+   currentpic.src = "assets/img/section3/slider" + currentpicid + ".jpg";
+}
 
 function previous() {
-   console.log("ауууууу а ну ладно")
-   // currentpicid = currentpicid + 1;
-   currentpic.scr = "http://127.0.0.1:5500/assets/img/section3/slider1.jpg";
+   if (currentpicid > 0) {
+      currentpicid = currentpicid - 1;
+   }
+   else {
+      currentpicid = maxpicid;
+   }
+   currentpic.src = "assets/img/section3/slider" + currentpicid + ".jpg";
 }
