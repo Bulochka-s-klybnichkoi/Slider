@@ -1,40 +1,64 @@
-var button = document.getElementsByClassName("header-search")[0];
-var input = document.getElementsByClassName("header-field")[0];
+var arrowL = document.getElementsByClassName("arrow-left")[0];
+var arrowR = document.getElementsByClassName("arrow-right")[0];
 
-function searchButton() {
-   input.style.opacity = 1;
-   input.style.cursor = "text";
-}
-button.addEventListener("click", searchButton);
-
-var arrowL = document.getElementsByClassName("main-section3-slider-arrows-left")[0];
-var arrowR = document.getElementsByClassName("main-section3-slider-arrows-right")[0];
-
-var currentpic = document.querySelector(".main-section3-slider-img");
-var currentpicid = 0;
-var maxpicid = 2;
-
+var maxpiclength = 2000;
+var picwidth = 1000;
+var piclength = 0;
+var prostinya = document.getElementsByClassName("prostinya")[0];
 
 
 arrowL.addEventListener("click", previous);
 arrowR.addEventListener("click", next);
 
 function next() {
-   if (currentpicid > maxpicid - 1) {
-      currentpicid = 0;
+   if (piclength === -maxpiclength) {
+      piclength = 0;
    }
    else {
-      currentpicid++;
+      piclength = piclength - picwidth;
    }
-   currentpic.src = "assets/img/section3/slider" + currentpicid + ".jpg";
+   prostinya.style.transform = `translateX(${piclength}px)`;
+   prostinya.style.transition = "transform 500ms ease"
+   updateBalls()
 }
 
 function previous() {
-   if (currentpicid > 0) {
-      currentpicid = currentpicid - 1;
+   if (piclength === 0) {
+      piclength = -maxpiclength;
    }
    else {
-      currentpicid = maxpicid;
+      piclength = piclength + picwidth;
    }
-   currentpic.src = "assets/img/section3/slider" + currentpicid + ".jpg";
+   prostinya.style.transform = `translateX(${piclength}px)`;
+   prostinya.style.transition = "transform 500ms ease"
+   updateBalls()
+}
+
+var ball1 = document.getElementsByClassName("ball")[0]
+var ball2 = document.getElementsByClassName("ball")[1]
+var ball3 = document.getElementsByClassName("ball")[2]
+var allBalls = document.querySelectorAll(".ball")
+
+allBalls.forEach(passiveAllBalls)
+
+function passiveAllBalls(ball) {
+   ball.classList.remove("active-ball");
+}
+
+function activeBall(ball) {
+   ball.classList.add("active-ball");
+}
+
+function updateBalls() {
+   if (piclength == 0) {
+      activeBall(ball1);
+   }
+
+   else if (piclength == 1000) {
+      activeBall(ball2);
+   }
+
+   else if (piclength == 2000) {
+      activeBall(ball3);
+   }
 }
