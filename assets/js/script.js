@@ -10,6 +10,8 @@ var prostinya = document.getElementsByClassName("prostinya")[0];
 arrowL.addEventListener("click", previous);
 arrowR.addEventListener("click", next);
 
+updateBalls()
+
 function next() {
    if (piclength === -maxpiclength) {
       piclength = 0;
@@ -39,26 +41,25 @@ var ball2 = document.getElementsByClassName("ball")[1]
 var ball3 = document.getElementsByClassName("ball")[2]
 var allBalls = document.querySelectorAll(".ball")
 
-allBalls.forEach(passiveAllBalls)
-
-function passiveAllBalls(ball) {
-   ball.classList.remove("active-ball");
-}
-
-function activeBall(ball) {
-   ball.classList.add("active-ball");
+function passiveAllBalls() {
+   ball1.classList.remove("active-ball");
+   ball2.classList.remove("active-ball");
+   ball3.classList.remove("active-ball");
 }
 
 function updateBalls() {
    if (piclength == 0) {
-      activeBall(ball1);
+      passiveAllBalls()
+      ball1.classList.add("active-ball");
    }
 
    else if (piclength == 1000) {
-      activeBall(ball2);
+      passiveAllBalls()
+      ball2.classList.add("active-ball");
    }
 
    else if (piclength == 2000) {
-      activeBall(ball3);
+      passiveAllBalls()
+      ball3.classList.add("active-ball");
    }
 }
