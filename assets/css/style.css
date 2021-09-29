@@ -1,7 +1,6 @@
 .nyaarigato {
   overflow: hidden;
   max-width: 1000px;
-  border: 2px solid lawngreen;
   position: relative;
 }
 
@@ -16,13 +15,24 @@
   transform: rotate(180deg);
 }
 
+.arrows {
+  position: absolute;
+  top: 0px;
+  margin-top: calc(281px - 60px / 2);
+  z-index: 99;
+  margin-left: 10px;
+}
+
 .arrow-left,
 .arrow-right {
-  margin-top: calc(281px - 60px / 2);
   width: 60px;
   height: 60px;
-  z-index: 99;
   /* transform: translateY(calc(-281px + 60px / 2)); */
+}
+
+.arrow-right {
+  margin-left: 860px;
+  margin-right: 10px;
 }
 
 .balls {
@@ -43,7 +53,7 @@
   box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.5);
   width: 20px;
   height: 20px;
-  transition: background-color 250ms ease;
+  transition: background-color 500ms ease;
 }
 
 .ball:not(:last-child) {
@@ -52,5 +62,5 @@
 
 .active-ball {
   background-color: #b99162;
-  transition: background-color 250ms ease;
+  transition: background-color 500ms ease;
 }
